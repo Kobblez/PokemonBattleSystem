@@ -798,7 +798,7 @@ int main()
                         weath_multi = 1.5;
                 }
                 if (sky == 0)
-                    weath_multi = 0;
+                    weath_multi = 0; //Maybe should equl 1, gotten get used to th code again
 
                 crit = move_crit();
                 //Ignorances when the move crits
