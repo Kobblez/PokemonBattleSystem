@@ -515,7 +515,7 @@ double stage_mod(int stage) {
 }
 
 /*Stage modifiers for Accuracy and Evasion combined.
-Is different form other stage modifiers due to Accuracy
+Is different from other stage modifiers due to Accuracy
 and Evasion being directly linked.*/
 double stage_mod_acc_eva(int evas_stage, int acc_stage) {
     int stage = 0;
@@ -609,7 +609,7 @@ int main()
             }
             //Check for input of 'None' type
             else if (att1 == 0) {
-                cout << "**The attacker's first type must have a type**" << endl;
+                cout << "**The attacker's first type cannot be None**" << endl;
                 cin.clear();
                 cin.ignore(1000, '\n');
             }
@@ -618,7 +618,7 @@ int main()
         }
         //Att2 type input
         while (true) {
-            cout << "Enter attacker's second type number (if no second type, type '0' for none): ";
+            cout << "Enter attacker's second type number (if no second type, type '0' for None): ";
             cin >> att2;
             //Make sure input is within range
             if (att2 < 0 || att2 > 18) {
@@ -658,7 +658,7 @@ int main()
         while (true){
             cout << "Enter the base power of the move: ";
             cin >> power;
-            if (power < 0 || power > 250) {
+            if (power < 0 || power > 250) { //The power being 0 will indicate that the move is a status move (not implemented yet)
                 cout << "**Please enter a power between 1 and 250**" <<endl;
                 cin.clear();
                 cin.ignore(1000, '\n');
@@ -670,7 +670,7 @@ int main()
         while (true) {
             cout << "Enter the base accuracy of the move: ";
             cin >> acc;
-            if (acc < 0 || acc > 101) {
+            if (acc < 0 || acc > 101) { //If the accuracy is 101, the move will never miss
                 cout << "**Accuracy must be between 0 and 101**" << endl;
                 cin.clear();
                 cin.ignore(1000, '\n');
@@ -798,7 +798,7 @@ int main()
                         weath_multi = 1.5;
                 }
                 if (sky == 0)
-                    weath_multi = 0; //Maybe should equl 1, gotten get used to th code again
+                    weath_multi = 1; //Maybe should equl 1, gotten get used to th code again
 
                 crit = move_crit();
                 //Ignorances when the move crits
