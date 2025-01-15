@@ -54,7 +54,8 @@ int type_effectiveness(int atk, int def1, int def2) {
     if (atk == 14 && (def1 == 17 || def2 == 17))
         return 10;
 
-    //Type chart minus immunities which are above
+    //Type chart without the immunities
+    //Immunites are done above
     while (i < 2) {
         switch (j) {
         case 0: eff += 0;
